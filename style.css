@@ -1162,43 +1162,36 @@ footer {
     transform: translateY(0) !important;
   }
 
-  /* Ensure buttons are fully visible on mobile — disable hover transparency */
-  .btn,
-  .btn:hover,
-  .btn:focus,
-  .btn:active,
-  .btn:visited {
-    display: block !important;
-    width: fit-content !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    background: #1a1a1a !important;
-    color: #fff !important;
-    border: 1px solid #1a1a1a !important;
-    padding: 14px 40px !important;
-    font-size: 0.7rem !important;
-    font-weight: 600 !important;
-    font-family: 'Montserrat', sans-serif !important;
-    letter-spacing: 0.22em !important;
-    text-transform: uppercase !important;
-    text-decoration: none !important;
-    text-align: center !important;
-    line-height: 1.4 !important;
-    min-height: 44px !important;
-    box-sizing: border-box !important;
-    -webkit-appearance: none !important;
-    appearance: none !important;
-    -webkit-tap-highlight-color: transparent;
-    opacity: 1 !important;
-    visibility: visible !important;
+  /* Mobile CTA buttons — ID-targeted for maximum specificity */
+  #btn-connect,
+  #btn-secure {
+    display: block;
+    width: auto;
+    max-width: 260px;
+    height: 48px;
+    line-height: 48px;
+    margin: 2rem auto 0;
+    padding: 0 40px;
+    background: #1a1a1a;
+    color: #fff;
+    border: 1px solid #1a1a1a;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 1;
+    visibility: visible;
   }
-  .hero-content .btn,
-  .hero-content .btn:hover,
-  .hero-content .btn:focus,
-  .hero-content .btn:active {
-    background: transparent !important;
-    color: #fff !important;
-    border: 1px solid rgba(255,255,255,0.6) !important;
+  .hero-content .btn {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.6);
   }
 
   /* Story */
