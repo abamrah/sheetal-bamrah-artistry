@@ -73,6 +73,10 @@ h1, h2, h3, h4 {
   cursor: pointer;
   transition: background 0.4s, color 0.4s;
 }
+/* Desktop wrapper is transparent */
+.mobile-btn-wrap {
+  display: inline;
+}
 @media (hover: hover) and (pointer: fine) {
   .btn:hover {
     background: transparent;
@@ -1162,32 +1166,6 @@ footer {
     transform: translateY(0) !important;
   }
 
-  /* Mobile CTA buttons — ID-targeted for maximum specificity */
-  #btn-connect,
-  #btn-secure {
-    display: block;
-    width: auto;
-    max-width: 260px;
-    height: 48px;
-    line-height: 48px;
-    margin: 2rem auto 0;
-    padding: 0 40px;
-    background: #1a1a1a;
-    color: #fff;
-    border: 1px solid #1a1a1a;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-align: center;
-    box-sizing: border-box;
-    -webkit-appearance: none;
-    appearance: none;
-    opacity: 1;
-    visibility: visible;
-  }
   .hero-content .btn {
     background: transparent;
     color: #fff;

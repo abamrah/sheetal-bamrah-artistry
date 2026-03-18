@@ -335,45 +335,4 @@
 
   sections.forEach(sec => sectionObserver.observe(sec));
 
-  /* --------------------------------------------------
-     FORCE MOBILE BUTTON STYLES — absolute override
-     Uses setProperty with 'important' flag which creates
-     inline !important styles (highest CSS specificity)
-     -------------------------------------------------- */
-  function fixMobileButtons() {
-    if (window.innerWidth > 768) return;
-    var btns = [
-      document.getElementById('btn-connect'),
-      document.getElementById('btn-secure')
-    ];
-    btns.forEach(function(btn) {
-      if (!btn) return;
-      var s = btn.style;
-      s.setProperty('display', 'block', 'important');
-      s.setProperty('width', 'auto', 'important');
-      s.setProperty('max-width', '260px', 'important');
-      s.setProperty('height', '48px', 'important');
-      s.setProperty('line-height', '48px', 'important');
-      s.setProperty('margin', '2rem auto 0', 'important');
-      s.setProperty('padding', '0 40px', 'important');
-      s.setProperty('background', '#1a1a1a', 'important');
-      s.setProperty('color', '#fff', 'important');
-      s.setProperty('border', '1px solid #1a1a1a', 'important');
-      s.setProperty('font-family', 'Montserrat, sans-serif', 'important');
-      s.setProperty('font-size', '0.7rem', 'important');
-      s.setProperty('font-weight', '600', 'important');
-      s.setProperty('letter-spacing', '0.22em', 'important');
-      s.setProperty('text-transform', 'uppercase', 'important');
-      s.setProperty('text-decoration', 'none', 'important');
-      s.setProperty('text-align', 'center', 'important');
-      s.setProperty('box-sizing', 'border-box', 'important');
-      s.setProperty('-webkit-appearance', 'none', 'important');
-      s.setProperty('appearance', 'none', 'important');
-      s.setProperty('opacity', '1', 'important');
-      s.setProperty('visibility', 'visible', 'important');
-    });
-  }
-  fixMobileButtons();
-  window.addEventListener('resize', fixMobileButtons);
-
 })();

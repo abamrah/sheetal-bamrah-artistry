@@ -12,7 +12,45 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=4" />
+
+  <!-- Mobile button fix — inline to bypass caching -->
+  <style>
+    @media (max-width: 768px) {
+      .mobile-btn-wrap {
+        display: block !important;
+        width: 220px !important;
+        height: 48px !important;
+        margin: 2rem auto 0 !important;
+        background-color: #1a1a1a !important;
+        border: 1px solid #1a1a1a !important;
+        overflow: visible !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      .mobile-btn-wrap a {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: none !important;
+        border: none !important;
+        color: #fff !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 0.7rem !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.22em !important;
+        text-transform: uppercase !important;
+        text-decoration: none !important;
+        text-align: center !important;
+        line-height: 48px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        -webkit-appearance: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -105,7 +143,9 @@
         experience rooted in professionalism, artistry, and genuine care for every bride 
         and client she serves.
       </p>
-      <a href="#contact" class="btn" id="btn-connect">LET'S CONNECT</a>
+      <div class="mobile-btn-wrap">
+        <a href="#contact" class="btn" id="btn-connect">LET'S CONNECT</a>
+      </div>
     </div>
   </div>
 </section>
@@ -195,7 +235,9 @@
     </div>
 
     <div class="services-cta">
-      <a href="#contact" class="btn" id="btn-secure">SECURE YOUR DATE</a>
+      <div class="mobile-btn-wrap">
+        <a href="#contact" class="btn" id="btn-secure">SECURE YOUR DATE</a>
+      </div>
     </div>
   </div>
 </section>
@@ -458,6 +500,6 @@
 <!-- ============================================================
      SCRIPTS
      ============================================================ -->
-<script src="script.js?v=3"></script>
+<script src="script.js?v=4"></script>
 </body>
 </html>
