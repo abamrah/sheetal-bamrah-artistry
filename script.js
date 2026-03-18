@@ -68,9 +68,9 @@
       }
     }
 
-    // Hero content fade (description + button)
+    // Hero content fade (description + button) — skip on mobile
     const heroContent = $('.hero-content');
-    if (heroContent && scrollY < heroH) {
+    if (heroContent && scrollY < heroH && window.innerWidth > 768) {
       const descFade = Math.max(0, 1 - scrollY / (heroH * 0.35));
       const desc = heroContent.querySelector('.hero-description');
       const btn = heroContent.querySelector('.btn');
