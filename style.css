@@ -1037,6 +1037,13 @@ h1, h2, h3, h4 {
   z-index: 2;
 }
 
+.service-min-note {
+  font-size: 0.72rem;
+  font-style: italic;
+  color: #999;
+  font-weight: 300;
+}
+
 .btn-submit {
   align-self: center;
   margin-top: 1rem;
