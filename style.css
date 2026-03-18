@@ -1160,8 +1160,12 @@ footer {
     transform: translateY(0) !important;
   }
 
-  /* Ensure buttons are fully visible on mobile */
-  .btn {
+  /* Ensure buttons are fully visible on mobile — disable hover transparency */
+  .btn,
+  .btn:hover,
+  .btn:focus,
+  .btn:active,
+  .btn:visited {
     background: #1a1a1a !important;
     color: #fff !important;
     border: 1px solid #1a1a1a !important;
@@ -1169,8 +1173,12 @@ footer {
     font-size: 0.68rem;
     -webkit-appearance: none;
     appearance: none;
+    -webkit-tap-highlight-color: transparent;
   }
-  .hero-content .btn {
+  .hero-content .btn,
+  .hero-content .btn:hover,
+  .hero-content .btn:focus,
+  .hero-content .btn:active {
     background: transparent !important;
     color: #fff !important;
     border: 1px solid rgba(255,255,255,0.6) !important;
