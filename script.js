@@ -25,6 +25,8 @@
   const lightboxNext  = $('#lightboxNext');
   const contactForm   = $('#contactForm');
   const formSuccess   = $('#formSuccess');
+  const classForm     = $('#classForm');
+  const classFormSuccess = $('#classFormSuccess');
 
   /* --------------------------------------------------
      PRELOADER
@@ -263,43 +265,50 @@
   });
 
   /* --------------------------------------------------
-     CONTACT FORM — FormSubmit.co (sends to email)
+     FORMS — FormSubmit.co (sends to email)
      -------------------------------------------------- */
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+  function bindAsyncForm(formEl, successEl) {
+    if (!formEl || !successEl) return;
 
-    const formData = new FormData(contactForm);
-    const submitBtn = contactForm.querySelector('.btn-submit');
-    submitBtn.textContent = 'SENDING...';
-    submitBtn.disabled = true;
+    formEl.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-    fetch(contactForm.action, {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    })
-    .then(response => {
-      if (response.ok) {
-        contactForm.style.display = 'none';
-        formSuccess.classList.add('show');
-        contactForm.reset();
-      } else {
+      const formData = new FormData(formEl);
+      const submitBtn = formEl.querySelector('.btn-submit');
+      submitBtn.textContent = 'SENDING...';
+      submitBtn.disabled = true;
+
+      fetch(formEl.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          formEl.style.display = 'none';
+          successEl.classList.add('show');
+          formEl.reset();
+        } else {
+          alert('Something went wrong. Please try again or email directly.');
+        }
+      })
+      .catch(() => {
         alert('Something went wrong. Please try again or email directly.');
-      }
-    })
-    .catch(() => {
-      alert('Something went wrong. Please try again or email directly.');
-    })
-    .finally(() => {
-      submitBtn.textContent = 'SUBMIT';
-      submitBtn.disabled = false;
+      })
+      .finally(() => {
+        submitBtn.textContent = 'SUBMIT';
+        submitBtn.disabled = false;
 
-      setTimeout(() => {
-        contactForm.style.display = '';
-        formSuccess.classList.remove('show');
-      }, 6000);
+        setTimeout(() => {
+          formEl.style.display = '';
+          successEl.classList.remove('show');
+        }, 6000);
+      });
     });
-  });
+  }
+
+  bindAsyncForm(contactForm, formSuccess);
+  bindAsyncForm(classForm, classFormSuccess);
 
   /* --------------------------------------------------
      SMOOTH SCROLL for nav links

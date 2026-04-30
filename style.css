@@ -941,6 +941,20 @@ h1, h2, h3, h4 {
   color: #1a1a1a;
 }
 
+/* ============================================================
+   CLASSES SECTION
+   ============================================================ */
+#classes {
+  padding: 100px 0;
+  background: #fff;
+}
+#classes .contact-wrapper {
+  max-width: 760px;
+}
+#classes .contact-intro {
+  margin-bottom: 2.2rem;
+}
+
 /* Form */
 .contact-form {
   display: flex;
