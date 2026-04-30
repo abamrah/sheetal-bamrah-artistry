@@ -289,11 +289,11 @@
           successEl.classList.add('show');
           formEl.reset();
         } else {
-          alert('Something went wrong. Please try again or email directly.');
+          HTMLFormElement.prototype.submit.call(formEl);
         }
       })
       .catch(() => {
-        alert('Something went wrong. Please try again or email directly.');
+        HTMLFormElement.prototype.submit.call(formEl);
       })
       .finally(() => {
         submitBtn.textContent = 'SUBMIT';
